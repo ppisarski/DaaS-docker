@@ -47,3 +47,14 @@ def impute_cabin(data):
 def impute_embarked(data):
     data['Embarked'] = data['Embarked'].fillna('S')
     return data
+
+
+def impute_all_features(data):
+    data = impute_title(data)
+    data = impute_age(data)
+    data = impute_family(data)
+    data = impute_ticket(data)
+    data = impute_fare(data)
+    data = impute_cabin(data)
+    data = impute_embarked(data)
+    return data

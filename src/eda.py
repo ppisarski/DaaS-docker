@@ -4,13 +4,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
+from src.preprocessing import *
 from src.features import *
-
-
-def get_data():
-    train_data = pd.read_csv('../data/train.csv')
-    test_data = pd.read_csv('../data/test.csv')
-    return train_data, test_data
 
 
 def pclass(data):
