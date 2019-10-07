@@ -63,7 +63,6 @@ def main():
     rf = RandomForestClassifier(n_estimators=20, criterion='entropy')
     rf.fit(X_train, y_train)
     rf_score = rf.score(X_test, y_test)
-    rf_score_tr = rf.score(X_train, y_train)
     accuracies.append(rf_score)
 
     # xgb = XGBClassifier()
@@ -71,7 +70,7 @@ def main():
     # xgb_score = xgb.score(X_test, y_test)
     # accuracies.append(xgb_score)
 
-    with PdfPages('../figs/classifiers.pdf') as pdf:
+    with PdfPages('../results/classifiers.pdf') as pdf:
         # myLabels = ['Logistic Regression', 'SVM', 'Kernel SVM', 'KNN', 'Random Forest', 'Xgboost']
         labels = ['Logistic Regression', 'SVM', 'Kernel SVM', 'KNN', 'Random Forest']
         fig1_accu = sns.barplot(x=accuracies, y=labels)

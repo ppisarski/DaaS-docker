@@ -128,7 +128,7 @@ def main():
     print("\n\nMissing values in train data:\n", train_data.isnull().sum())
     print("\n\nMissing values in test data:\n", test_data.isnull().sum())
 
-    with PdfPages('../figs/eda.pdf') as pdf:
+    with PdfPages('../results/eda.pdf') as pdf:
         pclass(train_data)
         pdf.savefig()
         plt.close()
